@@ -1,0 +1,102 @@
+$ go test -v ./tests/
+
+
+2025/12/24 10:37:56 Warning: .env file was not found.
+=== RUN   TestFullFlow
+2025/12/24 10:37:58 Database connected successfully
+=== RUN   TestFullFlow/AUTH-Register_Step_1:_Register_User
+=== RUN   TestFullFlow/AUTH-Register_Step_2:_Register_Same_Email_Should_Return_Error
+=== RUN   TestFullFlow/AUTH-Register_Step_3:_Register_Same_Username
+=== RUN   TestFullFlow/AUTH-Register_Step_4:_Register_With_Short_Password_Should_Return_Error
+=== RUN   TestFullFlow/AUTH-Login_Step_1:_Login_User
+=== RUN   TestFullFlow/AUTH-Login_Step_2:_Login_With_Wrong_Password
+=== RUN   TestFullFlow/AUTH-Login_Step_3:_Login_With_Non-Existing_Email
+=== RUN   TestFullFlow/AUTH-Login_Step_4:_Login_With_Non-Existing_Email
+=== RUN   TestFullFlow/AUTH-Login_Step_5:_Login_User_Last_Time
+=== RUN   TestFullFlow/AUTH-Refresh_Step_1:_Refresh_User_Token
+=== RUN   TestFullFlow/AUTH-Refresh_Step_2:_Send_Invalid_Token
+2025/12/24 10:38:13 token is malformed: token contains an invalid number of segments
+=== RUN   TestFullFlow/AUTH-Refresh_Step_3:_Send_Deleted_User_Token
+=== RUN   TestFullFlow/CAT-Step_1:_Admin_Create_Category_Successfully
+=== RUN   TestFullFlow/CAT-Step_2:_Get_All_Categories_(Read_Access)
+=== RUN   TestFullFlow/CAT-Step_3:_Duplicate_Name_Check
+=== RUN   TestFullFlow/CAT-Step_4:_Validation_-_Invalid_Color_Length
+=== RUN   TestFullFlow/CAT-Step_5:_Authorization_-_Regular_User_Cannot_Delete
+=== RUN   TestFullFlow/CAT-Step_6:_Update_Category_Name_and_Color
+=== RUN   TestFullFlow/CAT-Step_7:_Admin_Delete_Category
+=== RUN   TestFullFlow/PREP:_Create_Category
+=== RUN   TestFullFlow/1._Create_Task_(No_Category)
+=== RUN   TestFullFlow/2._Create_Task_(With_Category)
+=== RUN   TestFullFlow/3._Get_My_Tasks_List
+=== RUN   TestFullFlow/4._Fail:_Invalid_Date_Format
+=== RUN   TestFullFlow/5._Fail:_Invalid_Status
+=== RUN   TestFullFlow/6._Fail:_Title_Too_Long
+=== RUN   TestFullFlow/7._Fail:_Non-existent_CategoryID
+=== RUN   TestFullFlow/8._Fail:_Empty_Title
+=== RUN   TestFullFlow/9._Security:_User_B_Cannot_Update_User_A's_Task
+=== RUN   TestFullFlow/10._Security:_User_B_Cannot_Delete_User_A's_Task
+=== RUN   TestFullFlow/11._Security:_Regular_User_Accessing_Admin_Stats
+=== RUN   TestFullFlow/12._Admin:_Create_Task_for_User_B
+=== RUN   TestFullFlow/13._Admin:_Update_User_B's_Task
+=== RUN   TestFullFlow/14._Admin:_Get_All_Tasks_with_User_Info
+=== RUN   TestFullFlow/15._Admin:_Get_Task_Details_with_Files
+=== RUN   TestFullFlow/16._Admin:_Delete_User_B's_Task
+=== RUN   TestFullFlow/17._Statistics:_Get_Personal_Stats
+=== RUN   TestFullFlow/18._Statistics:_Admin_Get_Specific_User_Stats
+=== RUN   TestFullFlow/19._Filter:_Get_Tasks_by_Status
+=== RUN   TestFullFlow/20._Filter:_Get_Tasks_by_Category
+=== RUN   TestFullFlow/21._Security_Leak:_User_B_Accessing_User_A's_Private_Details
+=== RUN   TestFullFlow/FILE-1:_Successful_Upload_(Standardized_Nested_Structure)
+=== RUN   TestFullFlow/FILE-2:_Security_-_User_B_Access_Attempt_to_User_A_File_(IDOR)
+=== RUN   TestFullFlow/FILE-3:_Security_-_User_B_Delete_User_A_File
+=== RUN   TestFullFlow/FILE-4:_Check_Task_Details_for_Null_Files
+=== RUN   TestFullFlow/FILE-5:_Admin_Bypass_-_Delete_Any_File
+--- PASS: TestFullFlow (98.56s)
+    --- PASS: TestFullFlow/AUTH-Register_Step_1:_Register_User (0.82s)
+    --- PASS: TestFullFlow/AUTH-Register_Step_2:_Register_Same_Email_Should_Return_Error (3.11s)
+    --- PASS: TestFullFlow/AUTH-Register_Step_3:_Register_Same_Username (1.19s)
+    --- PASS: TestFullFlow/AUTH-Register_Step_4:_Register_With_Short_Password_Should_Return_Error (0.00s)
+    --- PASS: TestFullFlow/AUTH-Login_Step_1:_Login_User (2.72s)
+    --- PASS: TestFullFlow/AUTH-Login_Step_2:_Login_With_Wrong_Password (1.42s)
+    --- PASS: TestFullFlow/AUTH-Login_Step_3:_Login_With_Non-Existing_Email (0.57s)
+    --- PASS: TestFullFlow/AUTH-Login_Step_4:_Login_With_Non-Existing_Email (0.61s)
+    --- PASS: TestFullFlow/AUTH-Login_Step_5:_Login_User_Last_Time (0.67s)
+    --- PASS: TestFullFlow/AUTH-Refresh_Step_1:_Refresh_User_Token (0.25s)
+    --- PASS: TestFullFlow/AUTH-Refresh_Step_2:_Send_Invalid_Token (0.00s)
+    --- PASS: TestFullFlow/AUTH-Refresh_Step_3:_Send_Deleted_User_Token (1.85s)
+    --- PASS: TestFullFlow/CAT-Step_1:_Admin_Create_Category_Successfully (4.11s)
+    --- PASS: TestFullFlow/CAT-Step_2:_Get_All_Categories_(Read_Access) (0.82s)
+    --- PASS: TestFullFlow/CAT-Step_3:_Duplicate_Name_Check (2.06s)
+    --- PASS: TestFullFlow/CAT-Step_4:_Validation_-_Invalid_Color_Length (1.56s)
+    --- PASS: TestFullFlow/CAT-Step_5:_Authorization_-_Regular_User_Cannot_Delete (1.92s)
+    --- PASS: TestFullFlow/CAT-Step_6:_Update_Category_Name_and_Color (2.85s)
+    --- PASS: TestFullFlow/CAT-Step_7:_Admin_Delete_Category (2.87s)
+    --- PASS: TestFullFlow/PREP:_Create_Category (2.92s)
+    --- PASS: TestFullFlow/1._Create_Task_(No_Category) (1.64s)
+    --- PASS: TestFullFlow/2._Create_Task_(With_Category) (2.48s)
+    --- PASS: TestFullFlow/3._Get_My_Tasks_List (0.81s)
+    --- PASS: TestFullFlow/4._Fail:_Invalid_Date_Format (0.30s)
+    --- PASS: TestFullFlow/5._Fail:_Invalid_Status (0.32s)
+    --- PASS: TestFullFlow/6._Fail:_Title_Too_Long (0.31s)
+    --- PASS: TestFullFlow/7._Fail:_Non-existent_CategoryID (0.19s)
+    --- PASS: TestFullFlow/8._Fail:_Empty_Title (0.32s)
+    --- PASS: TestFullFlow/9._Security:_User_B_Cannot_Update_User_A's_Task (1.21s)
+    --- PASS: TestFullFlow/10._Security:_User_B_Cannot_Delete_User_A's_Task (0.82s)
+    --- PASS: TestFullFlow/11._Security:_Regular_User_Accessing_Admin_Stats (0.84s)
+    --- PASS: TestFullFlow/12._Admin:_Create_Task_for_User_B (1.80s)
+    --- PASS: TestFullFlow/13._Admin:_Update_User_B's_Task (1.47s)
+    --- PASS: TestFullFlow/14._Admin:_Get_All_Tasks_with_User_Info (1.04s)
+    --- PASS: TestFullFlow/15._Admin:_Get_Task_Details_with_Files (1.92s)
+    --- PASS: TestFullFlow/16._Admin:_Delete_User_B's_Task (2.16s)
+    --- PASS: TestFullFlow/17._Statistics:_Get_Personal_Stats (4.31s)
+    --- PASS: TestFullFlow/18._Statistics:_Admin_Get_Specific_User_Stats (4.30s)
+    --- PASS: TestFullFlow/19._Filter:_Get_Tasks_by_Status (1.86s)
+    --- PASS: TestFullFlow/20._Filter:_Get_Tasks_by_Category (1.02s)
+    --- PASS: TestFullFlow/21._Security_Leak:_User_B_Accessing_User_A's_Private_Details (1.83s)
+    --- PASS: TestFullFlow/FILE-1:_Successful_Upload_(Standardized_Nested_Structure) (2.04s)
+    --- PASS: TestFullFlow/FILE-2:_Security_-_User_B_Access_Attempt_to_User_A_File_(IDOR) (2.88s)
+    --- PASS: TestFullFlow/FILE-3:_Security_-_User_B_Delete_User_A_File (0.82s)
+    --- PASS: TestFullFlow/FILE-4:_Check_Task_Details_for_Null_Files (3.47s)
+    --- PASS: TestFullFlow/FILE-5:_Admin_Bypass_-_Delete_Any_File (2.45s)
+PASS
+ok      taskcaster/tests        98.567s

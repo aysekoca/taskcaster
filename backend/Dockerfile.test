@@ -1,0 +1,11 @@
+FROM golang:1.25.4 AS builder
+
+WORKDIR /test
+
+COPY . .
+
+RUN go mod tidy
+
+CMD ["go","test","-v","./tests"]
+
+

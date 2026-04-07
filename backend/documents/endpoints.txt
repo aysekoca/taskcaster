@@ -1,0 +1,37 @@
+/ping
+
+/api
+    /ping
+
+    /auth
+        /signup
+        /login
+        /refresh
+
+
+
+/ping 
+Çalışıyor mu diye kontrol etmek için "pong" döner
+
+
+/api/ping 
+Çalışıyor mu diye kontrol etmek için "api pong" döner
+
+/api/auth/signup
+kullanıcı kaydı için.
+parametreler (body): (json){name,surname,username,email,phonenumber,password}
+başarılı cevap: (json){success:true} (200 kodu ile)
+baaşarısız cevap: (json) {success:false,constraint:hangi input hatalı,message:hata mesajı} (400 kodu ile)
+
+
+/api/auth/login
+kullanıcı giriş için.
+parametreler (body): (json){username(email,username veya phonenumber olabilir),password}
+başarılı cevap: (json){success:true, message: başarıyla giriş yaptın, is_verified: kullanıcı doğrulandı mı, access: jwt access token, refresh:jwt refresh token,name:kullanıcının adı, surname: kullanıcının soyadı, username: kullanıcıadı,profilephoto:kullanıcının profil resmi, email:kullanıcının mail adresi} (200 kodu ile)
+baaşarısız cevap: (json) {success:false,message:hata mesajı} (400 kodu ile)
+
+/api/auth/refresh
+kullanıcı token yenilemesi için.
+parametreler (body): (json){token:jwt refresh token}
+(json){success:true, message: başarıyla giriş yaptın, is_verified: kullanıcı doğrulandı mı, access: jwt access token,name:kullanıcının adı, surname: kullanıcının soyadı, username: kullanıcıadı,profilephoto:kullanıcının profil resmi, email:kullanıcının mail adresi} (200 kodu ile)
+baaşarısız cevap: (json) {success:false,message:hata mesajı} (401 veya 500 kodu ile)
